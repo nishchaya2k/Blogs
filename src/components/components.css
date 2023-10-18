@@ -1,3 +1,27 @@
-.Blog.BlogDetails{
-    border: none;
+/* import BlogPage from '../components/BlogPage'; */
+/* here we are overriding the values selected blog of BlogDetails component for a 
+'BlogPage' page */
+
+/* zinc 200 */
+.selectedBlog{
+    background-color: rgb(228 228 231);
+
+    .selectedDetails{
+       border: none;
+       
+/* like button adjustment for the 'BlogPage' page selected blog */
+    .heart-bg{
+        margin-top: 37px;
+        right: 0px;
+}
+}
+}
+
+/* zinc 300 */
+.selectedBlog:hover{
+    .selectedDetails{
+        transition-property: all;
+        transition-duration: 500ms; 
+        background-color: rgb(212 212 216);  
+}
 }

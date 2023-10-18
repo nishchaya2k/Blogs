@@ -1,0 +1,55 @@
+.heart-icon {
+    height: 80px;
+    width: 80px;
+    background: url("../Images/heart.png");
+    background-position: left;
+    cursor: pointer; 
+    position: absolute;
+    background-size: cover;
+    padding: 0;
+  }
+
+  .heart-bg {
+    background: rgba(255, 192, 200, 0);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 100ms ease;
+    border: 2px;
+
+    /* for positioning of like button v.imp, just adjust the right and margin-top value from here to move
+    the element in this app */
+    position: absolute;
+    right:40px;
+    margin-top:-10px ;
+    
+  }
+
+  .heart-bg:hover {
+    background: rgba(255, 192, 200, 0.7);
+  }
+
+  .heart-icon.liked {
+    animation: like-anim 0.7s steps(28) forwards;
+  }
+
+  @keyframes like-anim {
+    to {
+      background-position: right;
+    }
+  }
+
+
+
+/* The background-size: cover keyword tells the browser to: 
+
+1. Make sure the image always covers the entire container
+2. Stretch the image or cut a little bit off one of the edges
+3. Maintain the image's ratio
+4. Mask the image to fit if the aspect ratios are not the same
+5. The background-size: contain keyword resizes the background 
+    image to make sure it remains fully visible 
+*/

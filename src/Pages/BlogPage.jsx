@@ -9,6 +9,7 @@ import { baseUrl } from '../baseUrl';
 import Back from '../components/Back';
 import Spinner from '../components/Spinner';
 import '../components/components.css'
+import '../components/Like.css'
 
 const BlogPage = () => {
     const newBaseUrl = "https://codehelp-apis.vercel.app/api/";
@@ -49,6 +50,7 @@ const BlogPage = () => {
         }
     }, [location.pathname] )
 
+
   return (
     <div className='' >
       <Header/>
@@ -61,7 +63,7 @@ const BlogPage = () => {
         blog ?
         (<div className="flex flex-col p-10 pt-0 pb-16">
 
-            <div className='Blog p-12 pt-0 shadow-xl hover:bg-zinc-300 hover:drop-shadow-2xl transition-all duration-500 rounded-lg bg-zinc-200 mt-8'>
+            <div className=' selectedBlog Blog p-12 pt-0 shadow-xl hover:bg-zinc-300 hover:drop-shadow-2xl transition-all duration-500 rounded-lg bg-zinc-200 mt-8 relative'>
                 <BlogDetails post={blog}/>
             </div>
             <h2 className='mt-20 -mb-6 text-red-400 font-extrabold text-[24px]'> Related Blogs </h2>

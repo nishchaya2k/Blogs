@@ -5,7 +5,7 @@ import Pagination from '../components/Pagination'
 
 const Home = () => {
   return (
-    <div className='flex flex-col border-2'>
+    <div className='flex flex-col'>
       <Header/>
       <div>
         <Blogs/>

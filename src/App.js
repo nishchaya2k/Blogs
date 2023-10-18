@@ -12,6 +12,9 @@ import TagPage from "./Pages/TagPage";
 import CategoryPage from "./Pages/CategoryPage";
 
 export default function App() {
+
+
+//we want to render that component which is in route so we need, and so we consume it
   const { fetchBlogPosts } = useContext(AppContext);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -40,13 +43,20 @@ export default function App() {
     else {
       fetchBlogPosts(Number(page));
     }
-  }, [location.pathname, location.search]);
+  }, [location.pathname, location.search]); 
+  //whenever pathname changes and page no. changes as we have mentioned in dependencies
+   //we will check the pathname and then contruct the updated url to fetch the data 
+   //accordingly using AppContext
 
-  //in path, value after ':' is dynamic 
+
+
+
+  //in path, value after ':' is dynamic, we'll the render the corresponding component 
+  //whenever the particular path reached in url
   return (
     <Routes>
       <Route path="/" element = {<Home/>}   />
-      <Route path="/blog/:blogId" element = {<BlogPage/>}   />
+      <Route path="/blog/:blogId" element = {<BlogPage/>}   /> {/* this component data fetched in BlogPage */}
       <Route path="/tags/:tag" element = {<TagPage/>}   />
       <Route path="/categories/:category" element = {<CategoryPage/>}   />
     </Routes>
@@ -57,3 +67,30 @@ export default function App() {
 //useLocation -> This hook returns the current location object
 //useNavigation -> hook which gives access to navigation object
 //overview of App, 1:10:00,2:02:10
+
+
+/*
+Whenever the location changes, <Routes> looks through all its child routes to find the
+best match and renders that branch of the UI. <Route> elements may be nested to 
+indicate nested UI, which also correspond to nested URL paths. Parent routes render
+their child routes by rendering an <Outlet>.
+
+Each route has the name of the components along with the path declaration, so when the
+user clicks on any <Link>, the matching <Route> is identified and rendered accordingly.
+
+*/
+
+
+/*
+Route
+The route is a statement that holds the specific path of the app along with the 
+component’s name and renders it once it matches the URL.
+
+Link
+The link is similar to the HREF link, which allows you to redirect to the specific 
+components based on the specified path.
+*/
+
+
+
+//https://www.pluralsight.com/guides/how-to-set-react-router-default-route-redirect-to-home

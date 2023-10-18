@@ -2,6 +2,10 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
 export default function Pagination() {
+
+  //we have posts and loading data, the point is how we gonna consume it, by using 
+  //'UseContext()' hook, we can have multiple Context in the app, but, at present 
+  //we have AppContext in this app, so obviously we will use that only
   const { page, handlePageChange, totalPages } = useContext(AppContext);
 
   if (!totalPages) return null;
