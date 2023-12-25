@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 // import {FcLike,FcLikePlaceholder} from 'react-icons/fc'
 import './Like.css'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const BlogDetails = ({post}) => {
